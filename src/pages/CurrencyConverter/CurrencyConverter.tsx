@@ -23,7 +23,7 @@ export default function CurrencyConverter() {
     return (
         <div>
             
-            <div className="flex flex-col gap3 items-center md:items-start">
+            <div className="flex flex-col gap-3 items-center md:items-start">
                 <AmountInput value={amount} onChange={setAmount}/>
                 
                 <CurrencySelector currencies={currencies} value={selectedFromCurrency} valueTo={selectedToCurrency}

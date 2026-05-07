@@ -8,7 +8,7 @@ function CurrencySelector({ currencies, value, valueTo, onChange, onChangeTo }: 
         <div className="mt-2 ">
             
             <div className="inline">
-            <select value={value} onChange={(e) => onChange(e.target.value)} className=" mt-2 rounded border-2 px-2 py-1">
+            <select value={value} onChange={(e) => onChange(e.target.value)} className="dark:text-white dark:border-gray-600 dark:bg-gray-600 mt-2 rounded border-2 px-2 py-1">
                 <option value="">Select</option>
                 {currencies.map((currency) => (
                     <option key={currency} value={currency}>
@@ -18,8 +18,8 @@ function CurrencySelector({ currencies, value, valueTo, onChange, onChangeTo }: 
             </select>
             </div>
             <div className="inline ml-1">
-            <label className="">To  </label>
-            <select value={valueTo} onChange={(e) => onChangeTo(e.target.value)} className="inline-block mt-2 rounded border-2 px-2 py-1">
+            <label className="dark:text-white">To  </label>
+            <select value={valueTo} onChange={(e) => onChangeTo(e.target.value)} className="dark:text-white dark:border-gray-600 dark:bg-gray-600 inline-block mt-2 rounded border-2 px-2 py-1">
                 <option value="">Select</option>
                 {currencies.map((currency) => (
                     <option key={currency} value={currency}>{currency}</option>

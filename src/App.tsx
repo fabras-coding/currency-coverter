@@ -16,9 +16,10 @@ function App() {
   }
 
   return (
-    <>
+    
+    <div className="bg-white dark:bg-gray-800">
       <section id="center">
-        <div>
+        <div className="ml-auto mr-2">
           <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         </div>
         <div className="hero">
@@ -26,7 +27,7 @@ function App() {
         </div>
         <div className="flex flex-col items-center">
           <h1 className="text-2xl font-bold text-purple-600">Currency Converter</h1>
-          <p>
+          <p className="dark:text-white">
           Fill in the amount and select the currencies.
           </p>
         </div>
@@ -36,8 +37,8 @@ function App() {
       
       
       </section>
-
-    </>
+  </div>
+  
   )
 }
 
