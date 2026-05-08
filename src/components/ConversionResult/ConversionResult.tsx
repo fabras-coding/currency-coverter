@@ -15,11 +15,27 @@ function ConversionResult({fromCurrency, toCurrency, amount}: FetchRatesProps) {
           className="border-2 rounded-md dark:border-gray-800 text-white bg-purple-700 hover:bg-purple-800 active:bg-purple-950 px-1 py-1 pl-16 pr-16 mt-2 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
           disabled={isLoading}
           onClick={() => {
+            if(amount <= 0) {
+                alert("Please enter a valid amount greater than 0.");
+                return;
+            }
+            if(!fromCurrency || !toCurrency) {
+                alert("Please select both currencies to convert.");
+                return;
+            }
+            if(fromCurrency === toCurrency) {
+                alert("Please select different currencies to convert.");
+                return;
+            }
             setIsLoading(true);
             setResult(undefined);
             useFetchRates({ fromCurrency, toCurrency, amount })
               .then((data) => {
                 setResult(data);
+              })
+              .catch((error) => {
+                alert("An error occurred while fetching the conversion rate. Please try again.");
+                setResult(undefined);
               })
               .finally(() => {
                 setIsLoading(false);
